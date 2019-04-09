@@ -1,0 +1,95 @@
+body {
+    overflow-x: hidden;
+    height: 100%;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar .navbar-brand {
+    color: #fed136;
+    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+}
+
+.navbar .navbar-nav .nav-link {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: white;
+    padding: 10px 15px;
+}
+
+.navbar .navbar-nav .nav-link:hover{
+    color: #fed136;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link.active{
+    color: white;
+    background-color: #fed136;
+}
+
+header{
+    color: white;
+    overflow: hidden;
+    background: #208379;
+    background: linear-gradient(135deg,#208379 20%,#051514 80%);
+    position: relative;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+header:before {
+    background-position: 50%;
+    background-size: 750px;
+    background-image: url(../assets/images/icon-bg.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 400%;
+    width: 100%;
+    display: block;
+    z-index: 0;
+    content: "";
+    opacity: .1;
+    pointer-events: none;
+}
+
+header .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+header .intro-text .intro-heading {
+    text-transform: none !important;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 50px;
+    margin-bottom: 25px;
+}
+
+.page-scroll{
+    color: white;
+    background-color: #fed136;
+    border-color: #fed136;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+
+@media (min-width: 768px){
+    .navbar .navbar-nav .nav-link.active {
+        border-radius: 3px;
+    }
+    header .intro-text {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+    header .intro-text .intro-heading {
+        font-size: 65px;
+        line-height: 90px;
+        margin-bottom: 50px;
+    }
+}
