@@ -4,12 +4,12 @@ import Header from './header';
 import './App.css';
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-      <Header />
-    </div>
-  );
+    return (
+        <div>
+            <Navbar />
+            <Header />
+        </div>
+    );
 }
 
 export default App;

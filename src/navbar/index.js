@@ -1,24 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import { Name, NavLinks } from '../Constants';
 
 export default function NavBar() {
-  return (
-    <Container>
-      <Navbar bg='dark' expand='lg' variant='dark' fixed='top'>
-        <Navbar.Brand href='#home'>Dibakar Halder</Navbar.Brand>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='basic-navbar-nav' className='justify-content-end'>
-          <Nav>
-            <Nav.Link href='#services'>What I Do</Nav.Link>
-            <Nav.Link href='#portfolio'>Portfolio</Nav.Link>
-            <Nav.Link href='#about'>About</Nav.Link>
-            <Nav.Link href='#blog'>Blog</Nav.Link>
-            <Nav.Link href='#contact'>Contact</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </Container>
-  );
+    const [affix, setAffix] = useState(false);
+    let handleScroll = () => {
+        let offset = 100;
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (!affix && scrollTop >= offset) {
+            setAffix(true);
+        }
+
+        if (affix && scrollTop < offset) {
+            setAffix(false);
+        }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return (
+        <Navbar className={affix ? 'affix' : ''} expand='lg' fixed='top' id='myNav'>
+            <Container>
+                <Navbar.Brand href='#home'>{Name}</Navbar.Brand>
+                <Navbar.Toggle aria-controls='basic-navbar-nav'>
+                    Menu <i className='fa fa-bars' />
+                </Navbar.Toggle>
+                <Navbar.Collapse id='basic-navbar-nav' className='justify-content-end'>
+                    <Nav>
+                        {NavLinks.map((link, i) => (
+                            <Nav.Link key={i} href={link.href}>
+                                {link.label}
+                            </Nav.Link>
+                        ))}
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
 }

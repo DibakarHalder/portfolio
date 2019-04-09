@@ -4,9 +4,24 @@ body {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.navbar {
+    background-color: #222222;
+    border-color: transparent;
+}
+
 .navbar .navbar-brand {
     color: #fed136;
     font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+}
+
+.navbar .navbar-toggler {
+    background-color: #fed136;
+    border-color: #fed136;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 12px;
+    padding: 9px 10px;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -80,6 +95,16 @@ header .intro-text .intro-heading {
 }
 
 @media (min-width: 768px){
+    .navbar {
+        background-color: transparent;
+        padding: 25px 0;
+        transition: padding 0.3s;
+        border: none;
+    }
+    .navbar.affix {
+        background-color: #222222;
+        padding: 10px 0;
+    }
     .navbar .navbar-nav .nav-link.active {
         border-radius: 3px;
     }
@@ -91,5 +116,9 @@ header .intro-text .intro-heading {
         font-size: 65px;
         line-height: 90px;
         margin-bottom: 50px;
+    }
+    .navbar .navbar-brand {
+        font-size: 2em;
+        transition: all 0.3s;
     }
 }
